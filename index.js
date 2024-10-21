@@ -1,496 +1,647 @@
-// "use strict"
+// // "use strict"
 
-// // Variable scoping
+// // // Variable scoping
 
-// // var myName = "Tayyaba";
-// // var myName = "Maryam"
+// // // var myName = "Tayyaba";
+// // // var myName = "Maryam"
 
-// // console.log(myName);
+// // // console.log(myName);
 
-// // let myName = "Tayyaba"
-// // myName = "Maryam"
+// // // let myName = "Tayyaba"
+// // // myName = "Maryam"
 
-// // myRollNo = 90;
+// // // myRollNo = 90;
 
-// // const pi = 3.142;
-// // console.log(pi+585);
+// // // const pi = 3.142;
+// // // console.log(pi+585);
 
-// // var function scope
+// // // var function scope
 
-// // function abc(){
-// //     var num = 90;
-// //     console.log(num);
+// // // function abc(){
+// // //     var num = 90;
+// // //     console.log(num);
 
+// // // }
+
+// // // console.log(num);
+
+// // // abc()
+
+// // // if(true){
+// // //     var num = 90
+// // // }
+
+// // // console.log(num);
+
+// // // let const block scope
+
+// // // function abc() {
+// // //     let num = 90
+// // //     console.log(num);
+
+// // // }
+
+// // // if (true) {
+// // //     let myName = "Tayyaba"
+// // // }
+// // // console.log(myName);
+
+// // // abc()
+
+// // // Template literals
+
+// // let firstName = "Tayyaba"
+// // let lastName = "Ali"
+
+// // // console.log("My name is " + firstName +" "+
+// // //     lastName
+// // // );
+
+// // // console.log(`My name is ${firstName} ${lastName}`);
+
+// // // Destructuring
+// // // const arr = ["red","blue","green","pink","orange"]
+
+// // // let value1 = arr[0]
+// // // let value2 = arr[1]
+
+// // // let [,,value2,,value3] = arr
+
+// // // console.log(value2,value3);
+
+// // // const arr1 = [["one","two"],"three"]
+
+// // // let [[num1,num2],var2] = arr1
+
+// // // console.log(num2);
+
+// // // Destructuring in objects
+
+// // const car = {
+// //     name: "corola",
+// //     model: [2024,2022],
+// //     wheels: {
+// //         number: 4,
+// //         color: "black"
+// //     },
+// //     engine: true
 // // }
 
-// // console.log(num);
+// // // let carName = car.name;
+// // // let carModel = car.model
 
-// // abc()
+// // let { engine: carEngine, model:[,model2022], wheels:{color,number} } = car
+// // console.log(model2022);
 
-// // if(true){
-// //     var num = 90
+// // Default parameters
+
+// // function abc(a=9,b=2){
+
+// //     return a+b
 // // }
 
-// // console.log(num);
+// // var sum = abc(6)
 
-// // let const block scope
+// // console.log(sum);
 
-// // function abc() {
-// //     let num = 90
-// //     console.log(num);
+// // const users=[
+// //     {firstName:"Tayyaba",rollNO:90309,age:23},
+// //     {firstName:"Maryam",rollNO:8794,age:20},
+// //     {firstName:"Mehak",rollNO:23846,age:20}
+// // ]
 
+// // let [{rollNO:zipcode},{firstName},{age}] = users
+
+// // console.log(zipcode,age,firstName);
+
+// // Ternary operator
+
+// // let age = 5;
+// // let drink;
+
+// // var number;
+
+// // drink = age > 5 ? "coffeee" : age == 5 ? "water" : "milk";
+
+// // console.log(drink);
+
+// // if(age>=5){
+// //     drink="coffee"
+// // }
+// // elseif(age==5){
+// // drink="water"
+// // }
+// // else{
+// //     drink="milk"
 // // }
 
-// // if (true) {
-// //     let myName = "Tayyaba"
+// // Rest parameter
+
+// // function numbers(...numbers) {
+// //     let result = 0;
+
+// //     for (let num of numbers) {
+// //         result = result + num
+// //     }
+// //     return result
+// //     // console.log(num1);
+// //     // console.log(num2);
+
 // // }
-// // console.log(myName);
+// // console.log(
+// //     numbers(1, 2, 3));
 
-// // abc()
+// // primitive vs reference or non-primitive data type
+// // string
+// // numbers
+// // boolean
+// // undefined
+// // BigInt
+// // null
+// // symbol
+// // NaN
 
-// // Template literals
+// // Reference
+// // array objects functions
 
-// let firstName = "Tayyaba"
-// let lastName = "Ali"
+// // console.log(typeof function(){
+// //     console.log("hello");
 
-// // console.log("My name is " + firstName +" "+
-// //     lastName
-// // );
+// // });
 
-// // console.log(`My name is ${firstName} ${lastName}`);
-
-// // Destructuring
-// // const arr = ["red","blue","green","pink","orange"]
-
-// // let value1 = arr[0]
-// // let value2 = arr[1]
-
-// // let [,,value2,,value3] = arr
-
-// // console.log(value2,value3);
-
-// // const arr1 = [["one","two"],"three"]
-
-// // let [[num1,num2],var2] = arr1
-
+// // let num1 = 7;
+// // let num2 = num1
+// // console.log("printing before increment");
+// // console.log(num1);
 // // console.log(num2);
 
-// // Destructuring in objects
+// // num1++
+// // num = num+1
 
-// const car = {
-//     name: "corola",
-//     model: [2024,2022],
-//     wheels: {
-//         number: 4,
-//         color: "black"
-//     },
-//     engine: true
-// }
+// // console.log("printing after increment");
+// // console.log(num1);
+// // console.log(num2);
 
-// // let carName = car.name;
-// // let carModel = car.model
+// // let arr1 = [7,6,8]
+// // let arr2 = arr1
 
-// let { engine: carEngine, model:[,model2022], wheels:{color,number} } = car
-// console.log(model2022);
+// // console.log("printing before pushing");
+// // console.log(arr1);
+// // console.log(arr2);
 
-// Default parameters
+// // arr1.push(9)
 
-// function abc(a=9,b=2){
+// // console.log("printing after pushing");
+// // console.log(arr1);
+// // console.log(arr2);
 
-//     return a+b
-// }
+// // let string = "class"
+// // let upperCased = string.toUpperCase()
+// // console.log(string)
 
-// var sum = abc(6)
+// // console.log(upperCased);
 
-// console.log(sum);
+// // spread operator
 
-// const users=[
-//     {firstName:"Tayyaba",rollNO:90309,age:23},
-//     {firstName:"Maryam",rollNO:8794,age:20},
-//     {firstName:"Mehak",rollNO:23846,age:20}
-// ]
+// // let arr1 = [8,7,2]
+// // let arr3 = [9,7,0]
+// // // let arr2 = arr1.slice(0)
+// // // let arr2 = [].concat(arr1)
+// // let arr2 = [...arr1,...arr3,9]
+// // console.log(arr1);
+// // console.log(arr3);
 
-// let [{rollNO:zipcode},{firstName},{age}] = users
+// // console.log(arr2);
 
-// console.log(zipcode,age,firstName);
+// // console.log(arr1 == arr2);
 
-// Ternary operator
+// // Higher order functions
 
-// let age = 5;
-// let drink;
+// // function abc(get){
 
-// var number;
+// // function outer(){
+// //     console.log("return");
 
-// drink = age > 5 ? "coffeee" : age == 5 ? "water" : "milk";
+// // }
+// // return outer
+// // }
 
-// console.log(drink);
+// // function function2(){
+// //   return "function2"
 
-// if(age>=5){
-//     drink="coffee"
-// }
-// elseif(age==5){
-// drink="water"
-// }
-// else{
-//     drink="milk"
-// }
+// // }
+// // let functionReturned = abc(function2)
+// // functionReturned()
 
-// Rest parameter
+// // let arr =["apple", "mango", "banana"];
+// //  let myArr = arr[Symbol.iterator]();
 
-// function numbers(...numbers) {
-//     let result = 0;
+// // console.log(myArr.next().value);
+// // console.log(myArr.next().value);
+// // (myArr.next())
+// // console.log(myArr.next())
 
-//     for (let num of numbers) {
-//         result = result + num
-//     }
-//     return result
-//     // console.log(num1);
-//     // console.log(num2);
+// // Closures
 
-// }
-// console.log(
-//     numbers(1, 2, 3));
+// // Lexical scope /environment
 
-// primitive vs reference or non-primitive data type
-// string
-// numbers
-// boolean
-// undefined
-// BigInt
-// null
-// symbol
-// NaN
+// // let a = 20;
+// // function outerFunction(){
+// //     function innerFunction(){
+// //         function innerMostFunction(){
+// //             console.log(a);
 
-// Reference
-// array objects functions
+// //         }
+// //         innerMostFunction()
+// //     }
+// //     innerFunction()
+// // }
 
-// console.log(typeof function(){
-//     console.log("hello");
+// // outerFunction()
 
-// });
+// // function outerFunction(number2){
+// //     let number1 = 10
+// //    function innerFunction(){
+// //        let number3 = 90
+// //        console.log(number1+number2+number3);
 
-// let num1 = 7;
-// let num2 = num1
-// console.log("printing before increment");
-// console.log(num1);
-// console.log(num2);
+// //     }
+// //     return innerFunction
+// // }
 
-// num1++
-// num = num+1
+// // let returningFunction = outerFunction(20)
+// // console.log(returningFunction());
 
-// console.log("printing after increment");
-// console.log(num1);
-// console.log(num2);
+// // function declaration // Named function
+// // function abc(){
+// // return "hello"
+// // }
+// // abc()
 
-// let arr1 = [7,6,8]
-// let arr2 = arr1
+// // Function expression / Anonymous function
+// // let abc = function () {
+// //   return "hello";
+// // };
 
-// console.log("printing before pushing");
-// console.log(arr1);
-// console.log(arr2);
+// // console.log(abc());
 
-// arr1.push(9)
+// // Arrow function / lamba function
 
-// console.log("printing after pushing");
-// console.log(arr1);
-// console.log(arr2);
+// // let abc = num1=>num1
 
-// let string = "class"
-// let upperCased = string.toUpperCase()
-// console.log(string)
+// // console.log(abc(2));
 
-// console.log(upperCased);
+// // optional chaining
 
-// spread operator
+// // const employee = {
+// //  employeeName : "Shabana",
+// //  empolyeId:321,
+// //  gender: "female",
+// //  address:{
+// //     street: "mt ana"
+// //  }
+// // }
 
-// let arr1 = [8,7,2]
-// let arr3 = [9,7,0]
-// // let arr2 = arr1.slice(0)
-// // let arr2 = [].concat(arr1)
-// let arr2 = [...arr1,...arr3,9]
-// console.log(arr1);
-// console.log(arr3);
+// // console.log(employee?.address?.area?.area);
 
-// console.log(arr2);
+// // Params destructuring
+// // function userBio({firstName,id}) {
+// //     console.log(firstName,id);
 
-// console.log(arr1 == arr2);
+// // }
 
-// Higher order functions
+// // const users = [
+// //   {
+// //     firstName: "laiba",
+// //     lastName: "Sadiq",
+// //     id: 783,
+// //   },
+// //   {
+// //     firstName: "javeria",
+// //     lastName: "saleem",
+// //     id: 783,
+// //   },
+// //   {
+// //     firstName: "sadia",
+// //     lastName: "gulaam nabi",
+// //     id: 783,
+// //   },
+// // ];
 
-// function abc(get){
+// // for (let user of users) {
+// // //   let { firstName, id } = user;
 
-// function outer(){
-//     console.log("return");
+// //   userBio(user);
+// // }
 
-// }
-// return outer
-// }
+// // Callback
+// // function appKaFunction(callback) {
+// //   // ...
 
-// function function2(){
-//   return "function2"
+// //   console.log(
+// //     "bartan dhore ho ammi ke dant sunrhe non extistent susraal ke tane sunrhe ho "
+// //   );
 
-// }
-// let functionReturned = abc(function2)
-// functionReturned()
+// //   callback()
+// // }
 
-// let arr =["apple", "mango", "banana"];
-//  let myArr = arr[Symbol.iterator]();
+// // function dostKaFunction(){
+// //     console.log("assignment chaap do mera dost nh ha yaar");
 
-// console.log(myArr.next().value);
-// console.log(myArr.next().value);
-// (myArr.next())
-// console.log(myArr.next())
+// // }
 
-// Closures
+// // appKaFunction(dostKaFunction)
 
-// Lexical scope /environment
+// // Array methods
 
-// let a = 20;
-// function outerFunction(){
-//     function innerFunction(){
-//         function innerMostFunction(){
-//             console.log(a);
+// // forEach,map,filer,reduce,sort
 
-//         }
-//         innerMostFunction()
-//     }
-//     innerFunction()
-// }
+// // const numbers = [1,2,3,4];
 
-// outerFunction()
+// // Array methods
+// // For Each
+// // numbers.forEach((value,index)=>{
+// //     console.log(value,index);
 
-// function outerFunction(number2){
-//     let number1 = 10
-//    function innerFunction(){
-//        let number3 = 90
-//        console.log(number1+number2+number3);
+// // })
 
-//     }
-//     return innerFunction
-// }
+// // map
 
-// let returningFunction = outerFunction(20)
-// console.log(returningFunction());
+// // const numbers = [1, 2, 3, 4];
 
-// function declaration // Named function
-// function abc(){
-// return "hello"
-// }
-// abc()
+// // let result = numbers.map(function (value, index) {
+// //   if (value % 2 === 0) {
+// //     return value;
+// //   }
 
-// Function expression / Anonymous function
-// let abc = function () {
-//   return "hello";
-// };
+// //   return "no value"
+// // });
 
-// console.log(abc());
+// // console.log(result);
 
-// Arrow function / lamba function
+// // const numbers = [ 1,2,3,4]
 
-// let abc = num1=>num1
+// // let finalArray = []
 
-// console.log(abc(2));
+// // numbers.forEach((value)=>{
+// //     finalArray.push(value*value)
 
-// optional chaining
+// // })
+// // // console.log(numbers);
+// // console.log(finalArray);
 
-// const employee = {
-//  employeeName : "Shabana",
-//  empolyeId:321,
-//  gender: "female",
-//  address:{
-//     street: "mt ana"
-//  }
-// }
+// // const names = ["tayyaba","rabia","laiba","javeria"]
 
-// console.log(employee?.address?.area?.area);
+// //  console.log(names.map(name=>name.toUpperCase()));
 
-// Params destructuring
-// function userBio({firstName,id}) {
-//     console.log(firstName,id);
+// // console.log(names);
 
-// }
+// // filter
 
-// const users = [
-//   {
-//     firstName: "laiba",
-//     lastName: "Sadiq",
-//     id: 783,
-//   },
-//   {
-//     firstName: "javeria",
-//     lastName: "saleem",
-//     id: 783,
-//   },
-//   {
-//     firstName: "sadia",
-//     lastName: "gulaam nabi",
-//     id: 783,
-//   },
+// // const arr = [1,3,4,8,5,7];
+// // let result = arr.filter(value =>{
+// //    return value%2!==0
+// // })
+
+// // console.log(result);
+
+// // sort
+
+// // const numbers = [5,10,78,100,50]
+
+// // numbers.sort((a,b)=>{
+// //     return b-a
+// // })
+
+// // console.log(numbers);
+
+// // const names = ["Tayyaba","rabia","laiba","jaaveria","javeria"]
+
+// // console.log(names.includes("hdsfkhsdf"));
+
+// // names.sort();
+
+// // console.log(names);
+
+// // reduce
+
+// // const numbers = [1,2,34]
+
+// // let sum = numbers.reduce((accumulator,currentValue)=>{
+// //     return accumulator+currentValue
+// // },0)
+
+// // console.log(sum);
+
+// // accumualor        currentvalue       total
+// // 1                      2              3
+// // // 3                      34             37
+
+// // const userCart = [
+// //     {productId:1,productName:"iphone",price:2000000},
+// //     {productId:2,productName:"computer",price:20000},
+// //     {productId:3,productName:"straighner",price:6000},
+// //     {productId:4,productName:"ac",price:100000},
+// // ]
+
+// // let prices = []
+// // for(var product of userCart ){
+// //     prices.push(product.price)
+// // }
+// // console.log(prices.reduce((previousProduct,nextproduct)=>{
+// //     return previousProduct+nextproduct
+// //  },0)
+// //  );
+
+// // console.log(prices);
+
+// let userName = "Tayyaba";
+
+// let key = "id";
+
+// // const obj = {
+// //     userName,
+// //    [key]:90,
+// //     employee: true,
+
+// //     greet:()=>{
+// //         console.log(this.userName);
+
+// //     }
+
+// // }
+// // obj.greet()
+
+// // function *abc(){
+// // yield console.log("hello");
+// // console.log("running");
+
+// // yield console.log("running");
+// // yield console.log("hi");
+
+// // }
+
+// // let generator = abc()
+// // console.log(generator.next());
+// // console.log(generator.next());
+// // console.log(generator.next());
+// // console.log(generator.next());
+// // console.log(generator.next());
+// // console.log(generator.next());
+// // console.log(abc().next());
+
+// // import { abc as hello, ourClass,obj } from "./file1.js";
+// // import kuchBhi from "./file1.js"
+
+// // kuchBhi()
+
+// // console.log(ourClass);
+
+// // hello()
+
+// // console.log("first");
+// // setTimeout(()=>{
+// //     console.log("second");
+
+// // },1000)
+
+// // console.log("third");
+
+// // promise
+
+// const datas = [
+//   { name: "Sadia", profession: "Graphic Designer " },
+//   { name: "Tayyaba", profession: "web developer" },
+//   { name: "Laiba", profession: "Javascript developer" },
 // ];
 
-// for (let user of users) {
-// //   let { firstName, id } = user;
+// // let weather = true;
+// async function abc() {
+//    await addingData();
 
-//   userBio(user);
+//   new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       datas.forEach(({ profession }) => {
+//         document.write(`<li>${profession}</li>`);
+//       });
+//     }, 3000);
+
+//     // if(weather){
+//     //   reject("kise or din chlengen")
+//     // }
+//     // else{
+//     //     resolve("chalo chlen")
+//     // }
+//   });
 // }
 
-// Callback
-// function appKaFunction(callback) {
-//   // ...
+// meetingPlan
+//   .then((message) => {
+//     console.log(message);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-//   console.log(
-//     "bartan dhore ho ammi ke dant sunrhe non extistent susraal ke tane sunrhe ho "
-//   );
+// abc()
 
-//   callback()
+// function addingData() {
+//   setTimeout(() => {
+//     datas.push({ name: "Arishah", profession: "teacher" });
+//   }, 5000);
 // }
 
-// function dostKaFunction(){
-//     console.log("assignment chaap do mera dost nh ha yaar");
+// Pillars of OOP(object oriented programming)
 
-// }
+// 1- Encapsulation
+// 2- Inheritance
+// 3- Abstraction
+// 4- Polymorphism
 
-// appKaFunction(dostKaFunction)
+// class Car {
+//   engine = "2700CC";
+//   model = 2024;
 
-// Array methods
-
-// forEach,map,filer,reduce,sort
-
-// const numbers = [1,2,3,4];
-
-// Array methods
-// For Each
-// numbers.forEach((value,index)=>{
-//     console.log(value,index);
-
-// })
-
-// map
-
-// const numbers = [1, 2, 3, 4];
-
-// let result = numbers.map(function (value, index) {
-//   if (value % 2 === 0) {
-//     return value;
+//   constructor(engine,model){
+//    this.engine = engine;
+//    this.model = model
 //   }
 
-//   return "no value"
-// });
-
-// console.log(result);
-
-// const numbers = [ 1,2,3,4]
-
-// let finalArray = []
-
-// numbers.forEach((value)=>{
-//     finalArray.push(value*value)
-     
-// })
-// // console.log(numbers);
-// console.log(finalArray);
-
-// const names = ["tayyaba","rabia","laiba","javeria"]
-
-//  console.log(names.map(name=>name.toUpperCase()));
-
-// console.log(names);
-
-
-// filter
-
-// const arr = [1,3,4,8,5,7];
-// let result = arr.filter(value =>{
-//    return value%2!==0
-// })
-
-// console.log(result);
-
-// sort
-
-// const numbers = [5,10,78,100,50]
-
-
-// numbers.sort((a,b)=>{
-//     return b-a
-// })
-
-// console.log(numbers);
-
-// const names = ["Tayyaba","rabia","laiba","jaaveria","javeria"]
-
-// console.log(names.includes("hdsfkhsdf"));
-
-// names.sort();
-
-// console.log(names);
-
-
-// reduce 
-
-// const numbers = [1,2,34]
-
-// let sum = numbers.reduce((accumulator,currentValue)=>{
-//     return accumulator+currentValue
-// },0)
-
-// console.log(sum);
-
-// accumualor        currentvalue       total
-// 1                      2              3
-// // 3                      34             37
-
-// const userCart = [
-//     {productId:1,productName:"iphone",price:2000000},
-//     {productId:2,productName:"computer",price:20000},
-//     {productId:3,productName:"straighner",price:6000},
-//     {productId:4,productName:"ac",price:100000},
-// ]
-
-// let prices = []
-// for(var product of userCart ){
-//     prices.push(product.price)
+// start(){
+//     console.log(this.engine,this.model);
+    
 // }
-// console.log(prices.reduce((previousProduct,nextproduct)=>{
-//     return previousProduct+nextproduct
-//  },0)
-//  );
 
-// console.log(prices);
-
-let userName = "Tayyaba"
-
-let key = "id"
-
-
-// const obj = {
-//     userName,
-//    [key]:90,
-//     employee: true,
-
-
-//     greet:()=>{
-//         console.log(this.userName);
-        
-//     }
-
+// static end(){
+//     console.log("ending");
+    
 // }
-// obj.greet()
-
-
-
-// function *abc(){
-// yield console.log("hello");
-// yield console.log("running");
-// yield console.log("hi");
 
 // }
 
-// console.log(abc().next());
-// console.log(abc().next());
 
-import { abc, ourClass } from "./file1.js";
+// let car1 = new Car("1800CC",2021)
 
-console.log(ourClass);
+// let car2= new Car("3300CC",2020)
 
-abc()
+
+// console.log(car1);
+// console.log(car2);
+
+
+// car1.start();
+
+
+// Car.end()
+
+
+
+// Map data structure
+
+// let obj =   new Map ()
+// obj.set(12,"twelve")
+// obj.set([1,2,3],"twelve")
+// obj.set({name:"hello"},"twelve")
+
+
+// let key2 = [1,2,3];
+
+
+
+// obj.set(key2,"twelve")
+
+
+
+// console.log(Object.keys(obj));
+
+// for (let key in obj){
+//     console.log(key);
+    
+// }
+
+
+// console.log(obj);
+
+// console.log(obj.get(obj.key2));
+
+// Object.assign
+
+// Math.pow
+
+// Array.isArray(value)
+
+// console.log(typeof []);
+// console.log(typeof (1+"true"));
+
+//  0 --->false
+// 1 --- true
+
+//  "1"+2+3
+
+
+// console.log([2,3]);
+
+// Array.prototype.abc= function(){
+//     console.log("ab");
+    
+// }
